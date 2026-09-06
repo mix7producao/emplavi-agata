@@ -1,0 +1,30 @@
+# Ambiente e credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+wp-config.php
+
+# Dependências, caches, arquivos temporários e logs
+node_modules/
+.cache/
+tmp/
+temp/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Pacotes e cópias de distribuição locais
+*.zip
+*.bak
+*.backup
+
+# Sistema operacional e editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,1 @@
+Ágata V44. Os dois logos do cabeçalho apontam para a âncora #top. Publique index.html e a pasta assets juntos.
