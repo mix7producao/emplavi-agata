@@ -1,23 +1,31 @@
-.agata-film{position:relative;background:#020102;padding:clamp(72px,9vw,140px) 0 clamp(88px,10vw,160px);overflow:hidden}
-.agata-film::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:70%;background:radial-gradient(ellipse at center,rgba(250,86,1,.16),transparent 62%);pointer-events:none}
+.agata-film{position:relative;background:#020102;padding:clamp(80px,10vw,160px) 0 clamp(96px,11vw,180px);overflow:hidden;isolation:isolate}
+.agata-film-glow{position:absolute;z-index:-1;left:50%;top:58%;width:min(1500px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(250,86,1,.22) 0,rgba(130,6,4,.14) 32%,transparent 64%);pointer-events:none;animation:agataFilmBreath 7s ease-in-out infinite}
 .agata-film-shell{position:relative;width:var(--shell);max-width:1320px;margin-inline:auto}
-.agata-film-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(28px,3.4vw,48px)}
-.agata-film-kicker{display:block;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.52);margin-bottom:16px}
-.agata-film-title{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4.6vw,5.2rem);line-height:.95;letter-spacing:-.04em;color:var(--white)}
-.agata-film-title em{display:block;font-style:italic;color:var(--orange)}
-.agata-film-note{max-width:300px;font-size:.84rem;line-height:1.65;color:rgba(255,255,255,.6)}
-.agata-film-frame{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.09)}
+.agata-film-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:clamp(32px,3.6vw,56px)}
+.agata-film-kicker{display:flex;align-items:center;gap:14px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.52);margin-bottom:18px}
+.agata-film-kicker::before,.agata-film-kicker::after{content:"";width:28px;height:1px;background:var(--orange)}
+.agata-film-title{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4.6vw,5.2rem);line-height:.98;letter-spacing:-.04em;color:var(--white)}
+.agata-film-line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.agata-film-line>span{display:block;will-change:transform}
+.agata-film-title em{font-style:italic;color:var(--orange)}
+.agata-film-frame{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 50px 140px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.09);will-change:clip-path,transform}
 .agata-film-frame iframe,.agata-film-poster{position:absolute;inset:0;width:100%;height:100%;border:0}
-.agata-film-poster{display:block;padding:0;cursor:pointer;background:#000;color:#fff;font:inherit}
-.agata-film-poster img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
-.agata-film-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,1,2,.05) 40%,rgba(2,1,2,.55))}
-.agata-film-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:clamp(76px,8vw,112px);aspect-ratio:1;border-radius:50%;background:rgba(250,86,1,.92);box-shadow:0 0 0 0 rgba(250,86,1,.45);animation:agataFilmPulse 2.4s ease-out infinite;transition:transform .4s,background .4s}
-.agata-film-play svg{width:30%;margin-left:8%;fill:#fff}
-.agata-film-label{position:absolute;z-index:2;left:clamp(18px,2.4vw,32px);bottom:clamp(16px,2.2vw,28px);font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.86)}
-.agata-film-poster:hover img,.agata-film-poster:focus-visible img{transform:scale(1.06);filter:brightness(1.06)}
-.agata-film-poster:hover .agata-film-play,.agata-film-poster:focus-visible .agata-film-play{transform:translate(-50%,-50%) scale(1.08);background:var(--orange)}
+.agata-film-poster{display:block;padding:0;cursor:pointer;background:#000;color:#fff;font:inherit;overflow:hidden}
+.agata-film-poster img{width:100%;height:100%;object-fit:cover;transform-origin:center;transition:filter .6s}
+.agata-film-poster::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(2,1,2,.5) 100%),linear-gradient(180deg,transparent 45%,rgba(2,1,2,.6));pointer-events:none}
+.agata-film-play{position:absolute;z-index:2;left:50%;top:50%;width:clamp(78px,8vw,116px);aspect-ratio:1;margin:calc(clamp(78px,8vw,116px)/-2) 0 0 calc(clamp(78px,8vw,116px)/-2);display:grid;place-items:center;will-change:transform}
+.agata-film-play-core{position:relative;z-index:2;display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff7a2e,var(--orange) 55%,#c94200);box-shadow:0 12px 40px rgba(250,86,1,.45);animation:agataFilmBeat 2.4s ease-in-out infinite;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.agata-film-play-core svg{width:30%;margin-left:8%;fill:#fff}
+.agata-film-ring{position:absolute;z-index:1;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(250,86,1,0) 40%,rgba(250,86,1,.55) 62%,rgba(250,86,1,0) 72%);opacity:0;animation:agataFilmRing 3s cubic-bezier(.2,.6,.3,1) infinite}
+.agata-film-ring:nth-child(2){animation-delay:1s}
+.agata-film-ring:nth-child(3){animation-delay:2s}
+.agata-film-halo{position:absolute;z-index:0;left:50%;top:50%;width:260%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(250,86,1,.38),rgba(250,86,1,.1) 40%,transparent 68%);animation:agataFilmHalo 2.4s ease-in-out infinite;pointer-events:none}
+.agata-film-poster:hover img,.agata-film-poster:focus-visible img{filter:brightness(1.08)}
+.agata-film-poster:hover .agata-film-play-core,.agata-film-poster:focus-visible .agata-film-play-core{transform:scale(1.1)}
 .agata-film-poster:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
-@keyframes agataFilmPulse{0%{box-shadow:0 0 0 0 rgba(250,86,1,.45)}80%,100%{box-shadow:0 0 0 26px rgba(250,86,1,0)}}
-@media (max-width:980px){.agata-film-head{flex-direction:column;align-items:flex-start;gap:18px}.agata-film-note{max-width:100%}}
-@media (max-width:640px){.agata-film{padding:64px 0 80px}.agata-film-frame{border-radius:12px}.agata-film-kicker{font-size:.64rem;letter-spacing:.22em;margin-bottom:12px}.agata-film-title{font-size:clamp(2.3rem,10.5vw,3rem)}.agata-film-label{font-size:.6rem;letter-spacing:.18em}}
-@media (prefers-reduced-motion:reduce){.agata-film-play{animation:none}.agata-film-poster img{transition:none}}
+@keyframes agataFilmRing{0%{transform:scale(.9);opacity:0}15%{opacity:1}100%{transform:scale(2.6);opacity:0}}
+@keyframes agataFilmBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes agataFilmHalo{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(.85)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}}
+@keyframes agataFilmBreath{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.94)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
+@media (max-width:640px){.agata-film{padding:72px 0 88px}.agata-film-frame{border-radius:12px}.agata-film-kicker{font-size:.64rem;letter-spacing:.22em;margin-bottom:14px}.agata-film-kicker::before,.agata-film-kicker::after{width:20px}.agata-film-title{font-size:clamp(2.3rem,10.5vw,3rem)}}
+@media (prefers-reduced-motion:reduce){.agata-film-glow,.agata-film-play-core,.agata-film-ring,.agata-film-halo{animation:none}.agata-film-ring{display:none}}
