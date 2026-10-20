@@ -5,6 +5,6 @@ const q=e=>s.querySelector(e),qa=e=>s.querySelectorAll(e),frame=q(".agata-film-f
 gsap.timeline({scrollTrigger:{trigger:s,start:"top 72%",once:!0}}).from(".agata-film-kicker",{opacity:0,y:18,duration:.8,ease:"power3.out"}).from(qa(".agata-film-line>span"),{yPercent:110,duration:1.15,stagger:.12,ease:"power4.out"},.1);
 gsap.fromTo(frame,{clipPath:"inset(14% 12% 14% 12% round 28px)",scale:.96},{clipPath:"inset(0% 0% 0% 0% round 18px)",scale:1,ease:"none",scrollTrigger:{trigger:frame,start:"top 92%",end:"top 30%",scrub:1}});
 img&&gsap.fromTo(img,{scale:1.28,yPercent:-4},{scale:1.04,yPercent:4,ease:"none",scrollTrigger:{trigger:frame,start:"top bottom",end:"bottom top",scrub:1}});
-play&&gsap.from(play,{scale:0,rotate:-90,duration:1.1,ease:"back.out(1.8)",scrollTrigger:{trigger:frame,start:"top 60%",once:!0}});
+play&&gsap.from(play,{opacity:0,scale:.85,duration:1,ease:"power2.out",scrollTrigger:{trigger:frame,start:"top 60%",once:!0}});
 gsap.fromTo(".agata-film-glow",{yPercent:-12},{yPercent:12,ease:"none",scrollTrigger:{trigger:s,start:"top bottom",end:"bottom top",scrub:1}});
 addEventListener("load",()=>ScrollTrigger.refresh())})();
