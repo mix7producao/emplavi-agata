@@ -4,8 +4,9 @@
 .agata-film-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:clamp(32px,3.6vw,56px)}
 .agata-film-kicker{display:flex;align-items:center;gap:14px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.52);margin-bottom:18px}
 .agata-film-kicker::before,.agata-film-kicker::after{content:"";width:28px;height:1px;background:var(--orange)}
-.agata-film-title{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4.6vw,5.2rem);line-height:.98;letter-spacing:-.04em;color:var(--white)}
-.agata-film-line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.agata-film-title{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,3.6vw,4rem);line-height:1.05;letter-spacing:-.03em;color:var(--white)}
+/* padding lateral para o itálico não ser cortado pelo overflow da animação */
+.agata-film-line{display:block;overflow:hidden;padding:0 .2em .12em;margin:0 -.2em -.12em}
 .agata-film-line>span{display:block;will-change:transform}
 .agata-film-title em{font-style:italic;color:var(--orange)}
 .agata-film-frame{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 50px 140px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.09);will-change:clip-path,transform}
@@ -27,5 +28,5 @@
 @keyframes agataFilmBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @keyframes agataFilmHalo{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(.85)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}}
 @keyframes agataFilmBreath{0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(.94)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}}
-@media (max-width:640px){.agata-film{padding:72px 0 88px}.agata-film-frame{border-radius:12px}.agata-film-kicker{font-size:.64rem;letter-spacing:.22em;margin-bottom:14px}.agata-film-kicker::before,.agata-film-kicker::after{width:20px}.agata-film-title{font-size:clamp(2.3rem,10.5vw,3rem)}}
+@media (max-width:640px){.agata-film{padding:72px 0 88px}.agata-film-frame{border-radius:12px}.agata-film-kicker{font-size:.64rem;letter-spacing:.22em;margin-bottom:14px}.agata-film-kicker::before,.agata-film-kicker::after{width:20px}.agata-film-title{font-size:clamp(2rem,9vw,2.6rem)}}
 @media (prefers-reduced-motion:reduce){.agata-film-glow,.agata-film-play-core,.agata-film-ring,.agata-film-halo{animation:none}.agata-film-ring{display:none}}
