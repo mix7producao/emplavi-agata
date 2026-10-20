@@ -51,11 +51,12 @@ No HTML, os campos visíveis se chamam `form_fields[nome]`, `form_fields[email]`
 
 ## 3. Subir
 
-- Destino: servidor da Emplavi via **SFTP** (não FTP), pasta `<raiz do WordPress>/<pasta-da-lp>/`.
-- Enviar `index.html`, `favicon.ico` e a pasta `assets/` inteira. **Não** enviar PDFs, `.git`, `.claude`, `LEIA-ME`, este checklist.
-- Antes de sobrescrever, baixar uma cópia da versão no ar (rollback).
-- Se houver cache (servidor/plugin/CDN), limpar depois.
-
+- **Automático:** cada push no `main` do repositório roda o workflow `.github/workflows/deploy.yml`, que envia os arquivos por SFTP com a chave SSH guardada no secret `DEPLOY_SSH_KEY`. Não depende de IP: o servidor libera o usuário de deploy só por chave.
+- Configuração (Settings > Secrets and variables > Actions): variáveis `DEPLOY_HOST`, `DEPLOY_USER` e `DEPLOY_PATH`. Sem `DEPLOY_USER`/`DEPLOY_PATH`, o workflow fica em espera (skipped).
+- A chave privada fica só no secret do GitHub e em `~/.ssh/emplavi_deploy_ed25519` no PC do Tiago. Nunca vai para o repositório.
+- O envio exclui `.git`, `.github`, `.claude`, `*.md`, `*.txt` e `*.pdf`, e não apaga nada no servidor.
+- **LP nova:** criar o repositório, copiar o workflow e definir `DEPLOY_PATH` com a pasta da nova LP (o mesmo usuário e a mesma chave servem).
+- Manual (emergência): GitHub > Actions > Deploy Emplavi > Run workflow.
 ## 4. Depois de subir (teste real, obrigatório)
 
 - [ ] Abrir `https://emplavi.com.br/<pasta>/?utm_source=teste&utm_campaign=deploy` em aba anônima.
