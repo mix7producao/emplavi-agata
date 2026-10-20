@@ -4,10 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#010001">
-  <meta name="description" content="Residencial Ágata Emplavi na SQSW 500, Sudoeste. 2 quartos, 76 a 89 m², opções de até 2 suítes e até 2 vagas.">
-  <title>Residencial Ágata | Emplavi</title>
+  <meta name="description" content="Apartamentos de 2 quartos de 76 a 89 m² na SQSW 500, Sudoeste, com até 2 suítes, até 2 vagas e lazer completo na cobertura. Veja plantas e condições de lançamento.">
+  <title>Apartamento 2 quartos do Sudoeste, SQSW 500 | Residencial Ágata</title>
+  <link rel="canonical" href="https://emplavi.com.br/residencial-agata/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emplavi.com.br/residencial-agata/">
+  <meta property="og:title" content="Apartamento 2 quartos do Sudoeste, SQSW 500 | Residencial Ágata">
+  <meta property="og:description" content="Apartamentos de 2 quartos de 76 a 89 m² na SQSW 500, Sudoeste, com até 2 suítes, até 2 vagas e lazer completo na cobertura. Veja plantas e condições de lançamento.">
+  <meta property="og:image" content="https://emplavi.com.br/residencial-agata/assets/og-image-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Emplavi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://emplavi.com.br/residencial-agata/assets/og-image-1200x630.jpg">
 <link rel="stylesheet" href="assets/site.7bbeb88046.css">
-<link rel="stylesheet" href="assets/agata-video.css"></head>
+<link rel="stylesheet" href="assets/agata-video.css">
+<link rel="stylesheet" href="assets/emplavi-leads.css?v=20261020">
+  <script>
+    // Configuração da LP no Hypnobox/RD Station. Conferir a cada LP nova (ver CHECKLIST-DEPLOY-EMPLAVI.md).
+    window.EMPLAVI_CONFIG = {
+      idProduto: "148", // ID oficial do Residencial Ágata no Hypnobox Emplavi
+      idFormulario: "148",
+      tokenRdStation: "33a69fee1f007e4a6a3a673585ba91a8", // token público do RD Station Emplavi
+      identificadorRd: "conversao-lp-residencial-agata",
+      tituloPagina: "Residencial Ágata",
+      tipoApartamento: "2 Quartos (76 a 89m²)",
+      bairro: "SQSW 500 - Sudoeste",
+      interesseEm: "Residencial Ágata - Lançamento SQSW 500",
+      midiaPadrao: "LP Residencial Agata",
+      mensagemOrigem: "LP Residencial Ágata (SQSW 500)",
+      urlObrigado: "/obrigado-residencial-agata/"
+    };
+    // GTM e RD Station só carregam em emplavi.com.br, para prévias não sujarem métricas nem gerarem leads.
+    window.EMPLAVI_LIVE = /(^|\.)emplavi\.com\.br$/.test(location.hostname);
+    if (window.EMPLAVI_LIVE) {
+      let gtmLoaded = false;
+      const loadGTM = function () {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WTZL5XF');
+      };
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(function (e) {
+        window.addEventListener(e, loadGTM, { once: true, passive: true });
+      });
+      setTimeout(loadGTM, 8000);
+      const rd = document.createElement('script');
+      rd.async = true;
+      rd.src = 'https://d335luupugsy2.cloudfront.net/js/loader-scripts/0f6b76f4-dd33-4f57-8541-eb4af362532e-loader.js';
+      document.head.appendChild(rd);
+    }
+    // O SDK do RD pode terminar de carregar depois do primeiro envio do formulário.
+    window.sendEmplaviRDLead = function (data) {
+      const deadline = Date.now() + 15000;
+      (function sendWhenReady() {
+        const integration = (window.RdstationFormsIntegration && window.RdstationFormsIntegration.Integration) || window.RdIntegration;
+        if (integration && typeof integration.post === 'function') integration.post(data);
+        else if (Date.now() < deadline) setTimeout(sendWhenReady, 200);
+        else console.warn('RD Station indisponível; envio direto não confirmado.');
+      })();
+    };
+  </script>
+</head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <header class="site-header" id="siteHeader">
@@ -38,6 +104,13 @@
         </div>
         <aside class="hero-form-wrap hero-form-desktop" aria-label="Cadastro para Lista VIP">
           <form class="lead-form lead-form-v9" id="leadFormTopDesktop" novalidate>
+            <input type="hidden" name="action" value="hypnobox_send">
+            <input type="hidden" name="form_fields[field_titulo_pagina]" value="Residencial Ágata">
+            <input type="hidden" name="form_fields[idproduto]" value="148">
+            <input type="hidden" name="form_fields[idformulario]" value="148">
+            <input type="hidden" name="form_fields[tipoapartamento]" value="2 Quartos">
+            <input type="hidden" name="identificador" value="conversao-lp-residencial-agata">
+            <input type="hidden" name="token_rdstation" value="33a69fee1f007e4a6a3a673585ba91a8">
             <div class="v9-form-head">
               <span>LANÇAMENTO</span>
               <img src="assets/asset-14.db0e515f39.svg" alt="Ágata">
@@ -49,9 +122,10 @@
             </div>
             <small class="v9-form-note">As vagas da Lista VIP são limitadas. Garanta a sua antes da abertura ao público.</small>
             <div class="v9-fields">
-              <label><span>Nome</span><input type="text" name="name" autocomplete="name" required></label>
-              <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-              <label><span>Telefone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+              <label><span>Nome</span><input type="text" name="form_fields[nome]" autocomplete="name" required aria-label="Nome"></label>
+              <label><span>Email</span><input type="email" name="form_fields[email]" autocomplete="email" required aria-label="Email"></label>
+              <label><span>Telefone (WhatsApp)</span><input type="tel" name="form_fields[phone]" autocomplete="tel" inputmode="numeric" required maxlength="16" placeholder="(61) 99999-9999" aria-label="Telefone WhatsApp"></label>
+              <label class="v9-field-optional"><span>Já é morador do Sudoeste? <em>opcional</em></span><select name="form_fields[mora_sudoeste]" aria-label="Já é morador do Sudoeste?"><option value="">Selecione</option><option value="Sim">Sim</option><option value="Não">Não</option></select></label>
             </div>
             <button type="submit">Entrar na Lista VIP</button>
             <em class="form-status" aria-live="polite"></em>
@@ -65,6 +139,13 @@
         </div>
         <aside class="hero-form-wrap hero-form-mobile" aria-label="Cadastro para Lista VIP">
           <form class="lead-form lead-form-v9" id="leadFormTopMobile" novalidate>
+            <input type="hidden" name="action" value="hypnobox_send">
+            <input type="hidden" name="form_fields[field_titulo_pagina]" value="Residencial Ágata">
+            <input type="hidden" name="form_fields[idproduto]" value="148">
+            <input type="hidden" name="form_fields[idformulario]" value="148">
+            <input type="hidden" name="form_fields[tipoapartamento]" value="2 Quartos">
+            <input type="hidden" name="identificador" value="conversao-lp-residencial-agata">
+            <input type="hidden" name="token_rdstation" value="33a69fee1f007e4a6a3a673585ba91a8">
             <div class="v9-form-head">
               <span>LANÇAMENTO</span>
               <img src="assets/asset-05.582974b4d5.svg" alt="Ágata">
@@ -76,9 +157,10 @@
             </div>
             <small class="v9-form-note">As vagas da Lista VIP são limitadas. Garanta a sua antes da abertura ao público.</small>
             <div class="v9-fields">
-              <label><span>Nome</span><input type="text" name="name" autocomplete="name" required></label>
-              <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-              <label><span>Telefone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+              <label><span>Nome</span><input type="text" name="form_fields[nome]" autocomplete="name" required aria-label="Nome"></label>
+              <label><span>Email</span><input type="email" name="form_fields[email]" autocomplete="email" required aria-label="Email"></label>
+              <label><span>Telefone (WhatsApp)</span><input type="tel" name="form_fields[phone]" autocomplete="tel" inputmode="numeric" required maxlength="16" placeholder="(61) 99999-9999" aria-label="Telefone WhatsApp"></label>
+              <label class="v9-field-optional"><span>Já é morador do Sudoeste? <em>opcional</em></span><select name="form_fields[mora_sudoeste]" aria-label="Já é morador do Sudoeste?"><option value="">Selecione</option><option value="Sim">Sim</option><option value="Não">Não</option></select></label>
             </div>
             <button type="submit">Entrar na Lista VIP</button>
             <em class="form-status" aria-live="polite"></em>
@@ -235,6 +317,13 @@
           <p>Depois deste, 2 quartos na Quadra 500 não será a mesma conversa. Consulte disponibilidades.</p>
         </div>
         <form class="lead-form lead-form-v9 lead-form-bottom" id="leadFormBottom" novalidate>
+            <input type="hidden" name="action" value="hypnobox_send">
+            <input type="hidden" name="form_fields[field_titulo_pagina]" value="Residencial Ágata">
+            <input type="hidden" name="form_fields[idproduto]" value="148">
+            <input type="hidden" name="form_fields[idformulario]" value="148">
+            <input type="hidden" name="form_fields[tipoapartamento]" value="2 Quartos">
+            <input type="hidden" name="identificador" value="conversao-lp-residencial-agata">
+            <input type="hidden" name="token_rdstation" value="33a69fee1f007e4a6a3a673585ba91a8">
           <div class="v9-form-head">
             <span>LANÇAMENTO</span>
             <img src="assets/asset-14.db0e515f39.svg" alt="Ágata">
@@ -246,9 +335,10 @@
           </div>
           <small class="v9-form-note">As vagas da Lista VIP são limitadas. Garanta a sua antes da abertura ao público.</small>
           <div class="v9-fields">
-            <label><span>Nome</span><input type="text" name="name" autocomplete="name" required></label>
-            <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-            <label><span>Telefone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+            <label><span>Nome</span><input type="text" name="form_fields[nome]" autocomplete="name" required aria-label="Nome"></label>
+            <label><span>Email</span><input type="email" name="form_fields[email]" autocomplete="email" required aria-label="Email"></label>
+            <label><span>Telefone (WhatsApp)</span><input type="tel" name="form_fields[phone]" autocomplete="tel" inputmode="numeric" required maxlength="16" placeholder="(61) 99999-9999" aria-label="Telefone WhatsApp"></label>
+              <label class="v9-field-optional"><span>Já é morador do Sudoeste? <em>opcional</em></span><select name="form_fields[mora_sudoeste]" aria-label="Já é morador do Sudoeste?"><option value="">Selecione</option><option value="Sim">Sim</option><option value="Não">Não</option></select></label>
           </div>
           <button type="submit">Entrar na Lista VIP</button>
           <em class="form-status" aria-live="polite"></em>
@@ -279,6 +369,7 @@
   </footer>
   <script defer src="assets/asset-01.96c01b81f4.js"></script>
   <script defer src="assets/asset-00.308219390e.js"></script>
-<script defer src="assets/site.de96107313.js"></script>
+<script defer src="assets/site.de96107313.js?v=20261020"></script>
+<script defer src="assets/emplavi-leads.js?v=20261020"></script>
 <script defer src="assets/agata-video.js"></script></body>
 </html>

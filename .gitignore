@@ -28,3 +28,6 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# Configuração local do Claude Code
+.claude/

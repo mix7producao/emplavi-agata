@@ -1,1 +1,2 @@
-Ágata V44. Os dois logos do cabeçalho apontam para a âncora #top. Publique index.html e a pasta assets juntos.
+Ágata V44. Os dois logos do cabeçalho apontam para a âncora #top. Publique index.html, favicon.ico e a pasta assets juntos.
+ANTES DE SUBIR NO SITE DA EMPLAVI: siga o CHECKLIST-DEPLOY-EMPLAVI.md (integração Hypnobox/RD, não altere nomes de campos, teste um lead real depois).
