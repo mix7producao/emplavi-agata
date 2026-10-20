@@ -10,7 +10,7 @@
 
   --brand-red-active:#85171e!important;
 
-  --brand-red-light:#9F1D26!important;
+  --brand-red-light:#C2242E!important;
 
   --brand-red-glow:rgba(159,29,38,.42)!important;
 
@@ -32,7 +32,7 @@
 
 .hero-v9 .v9-form-summary>.hero-heading-copy{margin:0!important;padding:0!important;font-family:var(--display)!important;font-size:clamp(1.4rem,1.7vw,1.62rem)!important;font-weight:100!important;line-height:1.08!important;letter-spacing:0.015em!important;text-transform:uppercase!important;color:#fff!important;text-align:center!important}
 
-.hero-v9 .v9-form-summary strong{margin:0!important;padding:0!important;font-size:clamp(.88rem,1vw,1rem)!important;line-height:1.35!important;color:#9F1D26!important}
+.hero-v9 .v9-form-summary strong{margin:0!important;padding:0!important;font-size:clamp(.88rem,1vw,1rem)!important;line-height:1.35!important;color:#C2242E!important}
 
 .hero-v9 .v9-form-note{display:block!important;margin:12px auto 0!important;max-width:36ch!important;font-size:12px!important;line-height:1.4!important;color:rgba(255,255,255,.82)!important;text-align:center!important}
 
@@ -94,7 +94,7 @@
 
   #lazer .leisure-levels article{grid-template-columns:1fr;gap:4px;padding:8px 0!important;border-top:1px solid rgba(255,255,255,.12)!important}
 
-  #lazer .leisure-levels strong{font-size:.78rem!important;display:block!important;letter-spacing:.1em!important;color:var(--brand-red-light,#9F1D26)!important}
+  #lazer .leisure-levels strong{font-size:.78rem!important;display:block!important;letter-spacing:.1em!important;color:var(--brand-red-light,#C2242E)!important}
 
   #lazer .leisure-levels p{font-size:.88rem!important;line-height:1.4!important;color:rgba(255,255,255,.85)!important}
 
@@ -270,7 +270,7 @@
 
   letter-spacing: .11em!important;
 
-  color: var(--brand-red-light, #9F1D26)!important;
+  color: var(--brand-red-light, #C2242E)!important;
 
   margin-bottom: 3px!important;
 
@@ -974,7 +974,7 @@
 
 .lead-form-bottom .v9-form-summary>.hero-heading-copy{margin:0!important;padding:0!important;font-family:var(--display)!important;font-size:clamp(1.65rem,2vw,1.85rem)!important;font-weight:100!important;line-height:1.04!important;letter-spacing:-.025em!important;text-transform:uppercase!important;color:#fff!important;text-align:center!important}
 
-.lead-form-bottom .v9-form-summary strong{margin:0!important;padding:0!important;font-size:clamp(.88rem,1vw,1rem)!important;line-height:1.35!important;text-align:center!important;color:var(--brand-red-light,#9F1D26)!important}
+.lead-form-bottom .v9-form-summary strong{margin:0!important;padding:0!important;font-size:clamp(.88rem,1vw,1rem)!important;line-height:1.35!important;text-align:center!important;color:var(--brand-red-light,#C2242E)!important}
 
 .lead-form-bottom .v9-form-note{display:block!important;margin:12px auto 0!important;max-width:36ch!important;font-size:12px!important;line-height:1.4!important;color:rgba(255,255,255,.82)!important;text-align:center!important}
 
@@ -1662,11 +1662,11 @@
 
 /* Item 11.1 e 11.2: Destaques de texto e conveniência */
 
-#convenience-title strong{color:var(--brand-red-light,#9F1D26)!important}
+#convenience-title strong{color:var(--brand-red-light,#C2242E)!important}
 
-.car-wash-pill{border-color:rgba(159,29,38,.4)!important;background:rgba(159,29,38,.08)!important;color:var(--brand-red-light,#9F1D26)!important}
+.car-wash-pill{border-color:rgba(159,29,38,.4)!important;background:rgba(159,29,38,.08)!important;color:var(--brand-red-light,#C2242E)!important}
 
-.footer-credit a:hover,.footer-credit-mix7 a:hover{color:var(--brand-red-light,#9F1D26)!important;text-shadow:0 0 12px rgba(159,29,38,.4)!important}
+.footer-credit a:hover,.footer-credit-mix7 a:hover{color:var(--brand-red-light,#C2242E)!important;text-shadow:0 0 12px rgba(159,29,38,.4)!important}
 
 .hero-two-fallback{color:rgba(159,29,38,.9)!important}
 
@@ -1868,7 +1868,7 @@
 
 .measure-type-row .type-sep {
 
-  color: var(--brand-red-light, #9F1D26)!important;
+  color: var(--brand-red-light, #C2242E)!important;
 
   margin: 0 6px!important;
 
@@ -2753,7 +2753,7 @@
 
 .measure-title .measure-accent {
 
-  color: var(--brand-red-light, #9F1D26) !important;
+  color: var(--brand-red-light, #C2242E) !important;
 
   font-weight: 200 !important;
 
@@ -3003,7 +3003,7 @@
 
   font-style: italic !important;
 
-  color: var(--brand-red-light, #9F1D26) !important;
+  color: var(--brand-red-light, #C2242E) !important;
 
   font-weight: 200 !important;
 
