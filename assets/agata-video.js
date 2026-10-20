@@ -7,5 +7,4 @@ gsap.fromTo(frame,{clipPath:"inset(14% 12% 14% 12% round 28px)",scale:.96},{clip
 img&&gsap.fromTo(img,{scale:1.28,yPercent:-4},{scale:1.04,yPercent:4,ease:"none",scrollTrigger:{trigger:frame,start:"top bottom",end:"bottom top",scrub:1}});
 play&&gsap.from(play,{scale:0,rotate:-90,duration:1.1,ease:"back.out(1.8)",scrollTrigger:{trigger:frame,start:"top 60%",once:!0}});
 gsap.fromTo(".agata-film-glow",{yPercent:-12},{yPercent:12,ease:"none",scrollTrigger:{trigger:s,start:"top bottom",end:"bottom top",scrub:1}});
-if(b&&play&&matchMedia("(pointer:fine)").matches){const xT=gsap.quickTo(play,"x",{duration:.6,ease:"power3"}),yT=gsap.quickTo(play,"y",{duration:.6,ease:"power3"});b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();xT((e.clientX-r.left-r.width/2)*.12);yT((e.clientY-r.top-r.height/2)*.12)});b.addEventListener("pointerleave",()=>{xT(0);yT(0)})}
 addEventListener("load",()=>ScrollTrigger.refresh())})();
