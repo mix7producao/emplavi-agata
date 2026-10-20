@@ -14,8 +14,9 @@ Formulário da LP  ──JS────▶  RD Station (token público + identif
 Depois do envio   ─────────▶ /obrigado-<empreendimento>/   (página de obrigado no WordPress)
 ```
 
-- O envio ao Hypnobox **só funciona dentro de emplavi.com.br** (mesmo domínio do WordPress). Fora dele (GitHub Pages, localhost), o `assets/emplavi-leads.js` só valida o formulário e não manda nada. Isso é de propósito, para prévias não criarem leads falsos.
-- Código: `assets/emplavi-leads.js` (envio) e `window.EMPLAVI_CONFIG` no `<head>` do `index.html` (dados da LP).
+- O envio ao Hypnobox **só funciona dentro de emplavi.com.br** (mesmo domínio do WordPress). Fora dele (GitHub Pages, localhost), o `assets/site.6c14e4f21e.js` só valida o formulário e não manda nada (GTM e RD Station também só carregam no domínio). Isso é de propósito, para prévias não criarem leads falsos.
+- Código: bloco "INTEGRAÇÃO PADRONIZADA HYPNOBOX EMPLAVI" em `assets/site.6c14e4f21e.js` (envio) e `window.EMPLAVI_CONFIG` no `<head>` do `index.html` (dados da LP).
+- **Fonte da verdade:** o que está no ar em `emplavi.com.br/<pasta>/`. Antes de editar, compare o repositório com o site publicado (baixe os arquivos) para não subir versão velha por cima.
 
 ## 1. Não mude os campos do Hypnobox
 
@@ -42,7 +43,8 @@ No HTML, os campos visíveis se chamam `form_fields[nome]`, `form_fields[email]`
 - [ ] O mesmo ID nos campos ocultos `form_fields[idproduto]` / `form_fields[idformulario]` dos **3 formulários**.
 - [ ] `identificadorRd` (conversão no RD) e `urlObrigado` com o nome do empreendimento certo, e a página de obrigado existe no WordPress.
 - [ ] `tituloPagina`, `tipoApartamento`, `bairro`, `interesseEm`, `midiaPadrao`, `mensagemOrigem` revisados.
-- [ ] `index.html` carrega `assets/emplavi-leads.js` e **não** existe outro handler de submit (o template antigo abria o WhatsApp sem mandar o lead ao CRM).
+- [ ] Existe **um único** handler de submit (o de `site.6c14e4f21e.js`). Um template antigo abria o WhatsApp sem mandar o lead ao CRM.
+- [ ] O envio espera a resposta do `admin-ajax.php` antes de redirecionar (`keepalive` + `await`), e o botão fica desabilitado durante o envio.
 - [ ] Ao trocar JS/CSS, mudar o `?v=AAAAMMDD` dos links para furar o cache.
 - [ ] Teste na prévia (GitHub Pages): preencher e enviar. Deve aparecer "Prévia: cadastro validado…" e o console mostra o payload com os campos da tabela acima.
 - [ ] `canonical`, `og:url` e `og:image` apontando para `https://emplavi.com.br/<pasta>/`.
