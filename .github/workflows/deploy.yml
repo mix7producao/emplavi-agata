@@ -1,0 +1,50 @@
+# Publica a LP no servidor da Emplavi via SFTP a cada push no main.
+# Usa a chave SSH em secrets.DEPLOY_SSH_KEY (sem depender de IP fixo).
+# Configuração em Settings > Secrets and variables > Actions > Variables:
+#   DEPLOY_HOST  servidor (178.62.54.36)
+#   DEPLOY_USER  usuário SFTP criado pela equipe do servidor
+#   DEPLOY_PATH  caminho absoluto da pasta da LP no servidor (ex.: /var/www/emplavi/residencial-agata)
+# Antes de mudar formulários, ver CHECKLIST-DEPLOY-EMPLAVI.md.
+name: Deploy Emplavi
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-emplavi
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.DEPLOY_USER != '' && vars.DEPLOY_PATH != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar chave SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ vars.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Enviar arquivos por SFTP
+        run: |
+          sudo apt-get install -y -qq lftp > /dev/null
+          lftp -c "
+            set sftp:connect-program 'ssh -a -x -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes';
+            set net:max-retries 2; set net:timeout 30;
+            open -u '${{ vars.DEPLOY_USER }}', sftp://${{ vars.DEPLOY_HOST }};
+            mirror --reverse --only-newer --verbose \
+              --exclude-glob .git/ --exclude-glob .github/ --exclude-glob .claude/ \
+              --exclude-glob '*.md' --exclude-glob '*.txt' --exclude-glob '*.pdf' --exclude-glob .gitignore \
+              ./ '${{ vars.DEPLOY_PATH }}/'
+          "
+
+      - name: Conferir site publicado
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' "https://emplavi.com.br/residencial-agata/?deploy=${GITHUB_SHA::7}")
+          echo "HTTP $code"
+          test "$code" = "200"
